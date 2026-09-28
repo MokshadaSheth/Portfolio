@@ -1,0 +1,177 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Premium dark navy theme */
+:root {
+  --bg: 15 23 42;
+  --fg: 241 245 249;
+  --accent: 129 140 248;
+  --muted: #a8b1c2;
+  --line: rgba(255, 255, 255, 0.10);
+  --card: rgba(255, 255, 255, 0.055);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+  background: rgb(var(--bg));
+}
+
+body {
+  @apply bg-bg text-fg font-sans antialiased overflow-x-hidden;
+  position: relative;
+}
+
+/* Ambient aurora + fading grid + film grain */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      600px circle at 15% 8%,
+      rgb(var(--accent) / 0.16),
+      transparent 60%
+    ),
+    radial-gradient(
+      700px circle at 90% 30%,
+      rgba(56, 189, 248, 0.10),
+      transparent 60%
+    ),
+    radial-gradient(
+      600px circle at 40% 100%,
+      rgba(45, 212, 191, 0.08),
+      transparent 60%
+    );
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.45;
+
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+
+  background-size: 64px 64px;
+
+  -webkit-mask-image:
+    radial-gradient(
+      ellipse at 50% 30%,
+      #000 20%,
+      transparent 75%
+    );
+
+  mask-image:
+    radial-gradient(
+      ellipse at 50% 30%,
+      #000 20%,
+      transparent 75%
+    );
+}
+
+:focus-visible {
+  outline: 2px solid rgb(var(--accent));
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+::selection {
+  background: rgb(var(--accent) / 0.3);
+}
+
+.btn {
+  @apply relative inline-flex items-center gap-2 rounded-full
+    border border-line px-5 py-2.5 text-sm font-medium text-fg
+    transition duration-300
+    hover:-translate-y-0.5
+    hover:border-accent/60
+    hover:bg-white/5;
+}
+
+.btn-primary {
+  @apply border-transparent bg-accent text-black
+    hover:bg-accent/90
+    hover:shadow-[0_8px_30px_-8px_rgb(var(--accent)/.6)];
+}
+
+.chip {
+  @apply rounded-full border border-line bg-card px-3 py-1
+    text-xs text-muted transition duration-200
+    hover:-translate-y-0.5
+    hover:border-accent/50
+    hover:text-fg;
+}
+
+.card {
+  @apply rounded-2xl border border-line p-6
+    backdrop-blur-md transition duration-300;
+
+  background:
+    linear-gradient(
+      160deg,
+      rgba(255, 255, 255, 0.075),
+      rgba(255, 255, 255, 0.025)
+    );
+
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.06) inset,
+    0 20px 40px -24px rgba(0, 0, 0, 0.45);
+}
+
+.card:hover {
+  border-color: rgb(var(--accent) / 0.35);
+}
+
+.text-gradient {
+  background:
+    linear-gradient(
+      180deg,
+      #ffffff 30%,
+      rgb(var(--accent)) 130%
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.nav-link {
+  position: relative;
+  transition: color 0.2s;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  height: 1px;
+  width: 100%;
+  background: rgb(var(--accent));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s;
+}
+
+.nav-link:hover {
+  color: rgb(var(--fg));
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
