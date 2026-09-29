@@ -19,10 +19,10 @@ export const portfolioData = {
   hero: { chips: ["AI", "RAG", "APIs", "Cloud", "DevOps", "Full Stack"] },
   about: {
     text: [
-      "Sanskruti is pursuing B.E. in Computer Engineering at Pune Institute of Computer Technology, Pune, with expected graduation in 2027 and a third-year CGPA of 9.91.",
-      "She previously completed a Diploma in Computer Technology from Sanjivani K. B. P. Polytechnic with 97.26%, and completed Visharad Purna in Bharatanatyam with First Class.",
+      "I am pursuing B.E. in Computer Engineering at Pune Institute of Computer Technology, Pune, with expected graduation in 2027 and a third-year CGPA of 9.98.",
+      "I have previously completed a Diploma in Computer Technology from Sanjivani K. B. P. Polytechnic with 97.26%, and completed Visharad Purna in Bharatanatyam with First Class.",
     ],
-    stats: [{ value: "9.91", label: "CGPA" }, { value: "97.26%", label: "Diploma" }, { value: "2027", label: "Expected Graduation" }],
+    stats: [{ value: "9.98", label: "CGPA" }, { value: "97.26%", label: "Diploma" }, { value: "2027", label: "Expected Graduation" }],
   },
   experience: [
     { company: "Barclays", role: "Software Developer Intern", period: "June 2026 – August 2026", points: ["Built an AI-Ops solution to automate troubleshooting of Vault onboarding issues on BCP.", "Built and deployed an OpenShift service for accessing OpenShift data."] },
@@ -60,6 +60,8 @@ export const portfolioData = {
   } as Record<string, string[]>,
   aiPipeline: ["User Intent", "Prompt / Context", "RAG / Semantic Search", "AI Agents", "Tool Calling", "LLM", "Application"],
   achievements: [
+    { title: "Barclays Best Business Impact Award", result: "Winner", year: "2026" },
+    { title: "Dhairya Debate Competition", result: "Runner Up", year: "2026" },
     { title: "National Level Paper Presentation", result: "Runner Up", year: "2024" },
     { title: "Inter College Speech Competition", result: "Winner", year: "2023" },
     { title: "Inter College Gathering Dance Competition", result: "Winner", year: "2023" },

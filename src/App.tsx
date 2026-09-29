@@ -9,7 +9,7 @@ export default function App() {
     <MotionConfig reducedMotion="user">
       <Navbar />
       <main>
-        <Hero /><About /><Experience /><Projects /><Skills /><AISection /><Achievements />
+        <Hero /><About /><Experience /><Projects /><Skills /><Achievements />
         {/* <BeyondCode /> */}
         <Contact />
       </main>
